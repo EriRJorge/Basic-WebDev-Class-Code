@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Profile Card</title>
+		<!-- Material Icons -->
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+		<!-- System Font (SF Pro Text inspired) -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, "Inter",
+					"Segoe UI", sans-serif;
+				background: #f5f5f7;
+				min-height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: 20px;
+			}
+
+			.profile-card {
+				background: rgba(255, 255, 255, 0.95);
+				backdrop-filter: blur(20px);
+				-webkit-backdrop-filter: blur(20px);
+				max-width: 400px;
+				width: 100%;
+				padding: 40px;
+				border-radius: 20px;
+				box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+				border: 1px solid rgba(255, 255, 255, 0.18);
+				text-align: center;
+			}
+
+			.profile-card h1 {
+				color: #1d1d1f;
+				font-size: 2em;
+				margin-bottom: 12px;
+				font-weight: 600;
+				letter-spacing: -0.5px;
+			}
+
+			.profile-card p {
+				color: #6e6e73;
+				font-size: 1em;
+				line-height: 1.5;
+				margin-bottom: 30px;
+				font-weight: 400;
+			}
+
+			.profile-card ul {
+				list-style: none;
+				margin-bottom: 30px;
+			}
+
+			.profile-card ul li {
+				background-color: #f5f5f7;
+				color: #1d1d1f;
+				padding: 14px 20px;
+				margin-bottom: 8px;
+				border-radius: 12px;
+				font-size: 0.95em;
+				display: flex;
+				align-items: center;
+				gap: 12px;
+				transition: all 0.2s ease;
+				font-weight: 500;
+			}
+
+			.profile-card ul li .material-icons {
+				font-size: 20px;
+				color: #007aff;
+			}
+
+			.profile-card ul li:hover {
+				background-color: #e8e8ed;
+				transform: scale(1.02);
+			}
+
+			.profile-card a {
+				display: inline-flex;
+				align-items: center;
+				gap: 8px;
+				background: #007aff;
+				color: white;
+				text-decoration: none;
+				padding: 12px 28px;
+				border-radius: 12px;
+				font-size: 0.95em;
+				font-weight: 500;
+				transition: all 0.2s ease;
+				box-shadow: 0 2px 8px rgba(0, 122, 255, 0.25);
+			}
+
+			.profile-card a .material-icons {
+				font-size: 18px;
+			}
+
+			.profile-card a:hover {
+				background: #0051d5;
+				transform: translateY(-1px);
+				box-shadow: 0 4px 12px rgba(0, 122, 255, 0.35);
+			}
+
+			.profile-card a:active {
+				transform: scale(0.98);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="profile-card">
+			<h1>Eri R Jorge</h1>
+			<p>
+				A Junior Computer Science major at Southern Adventist University
+				with 3+ years of freelance web development experience.
+				Specializing in frontend development with a concentration in Web
+				SEO optimization, and I enjoy building responsive web
+				applications using modern technologies like React, JavaScript,
+				and WordPress.
+			</p>
+			<ul>
+				<li>
+					<span class="material-icons">palette</span>
+					UI/UX Design
+				</li>
+				<li>
+					<span class="material-icons">code</span>
+					Full-Stack Development
+				</li>
+				<li>
+					<span class="material-icons">local_cafe</span>
+					Coffee Enthusiast
+				</li>
+			</ul>
+			<a href="https://www.instagram.com/tachi_bana.exe/">
+				<span class="material-icons">mail</span>
+				Get in Touch
+			</a>
+		</div>
+	</body>
+</html>
