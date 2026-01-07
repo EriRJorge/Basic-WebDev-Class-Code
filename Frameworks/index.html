@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Reusable Navbar Component - Assignment</title>
+
+		<style>
+			/* Basic styling for demonstration purposes */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family: Arial, sans-serif;
+			}
+
+			/* Navbar styles - customize as needed */
+			nav {
+				background-color: #333;
+				padding: 1rem 2rem;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			.nav-brand {
+				color: white;
+				font-size: 1.5rem;
+				font-weight: bold;
+				text-decoration: none;
+			}
+
+			.nav-links {
+				list-style: none;
+				display: flex;
+				gap: 2rem;
+			}
+
+			.nav-links a {
+				color: white;
+				text-decoration: none;
+				transition: color 0.3s;
+			}
+
+			.nav-links a:hover {
+				color: #4caf50;
+			}
+
+			main {
+				padding: 2rem;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 
+        STEP 1: CREATE A CONTAINER FOR THE NAVBAR
+        This div will hold our dynamically injected navbar component.
+        We give it an ID so we can target it with JavaScript.
+    -->
+		<div id="navbar-container"></div>
+
+		<!-- Main page content -->
+		<main>
+			<h1>Welcome to the Reusable Component Demo</h1>
+			<p>The navbar above was injected using JavaScript!</p>
+		</main>
+
+		<script>
+			/* 
+            STEP 2: CREATE THE NAVBAR COMPONENT FUNCTION
+            
+            This function returns a string of HTML (template string) that represents
+            our navbar component. This is the "reusable component" we'll inject into
+            multiple pages.
+            
+            INSTRUCTIONS:
+            - Define a function that returns an HTML string
+            - Use template literals (backticks ``) for multi-line HTML
+            - Include all the navbar HTML structure inside
+            - You can accept parameters to customize the navbar (optional)
+        */
+			function createNavbar() {
+				// TODO: Return your navbar HTML as a template string
+				// Example structure:
+				return `
+                <nav>
+                    <a href="#" class="nav-brand">Your Brand</a>
+                    <ul class="nav-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            `;
+			}
+
+			/* 
+            STEP 3: INJECT THE COMPONENT INTO THE PAGE
+            
+            Now we need to insert our navbar HTML into the navbar-container div.
+            
+            INSTRUCTIONS:
+            - Get the container element using document.getElementById()
+            - Use innerHTML to inject the component HTML
+            - Call this code when the page loads (or use DOMContentLoaded event)
+        */
+
+			// TODO: Get the navbar container element
+			const navbarContainer = document.getElementById("navbar-container");
+
+			// TODO: Inject the navbar component using innerHTML
+			navbarContainer.innerHTML = createNavbar();
+
+			/* 
+            ALTERNATIVE METHOD: Using DOMContentLoaded
+            This ensures the DOM is fully loaded before running the script
+            
+            Uncomment to use this approach instead:
+        */
+			/*
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbarContainer = document.getElementById('navbar-container');
+            navbarContainer.innerHTML = createNavbar();
+        });
+        */
+
+			/* 
+            ==========================================
+            HOW THIS MIMICS MODERN FRAMEWORKS
+            ==========================================
+            
+            This approach mimics how modern frameworks like React, Vue, and Angular
+            work by implementing the core concept of COMPONENT-BASED ARCHITECTURE:
+            
+            1. REUSABILITY: Just like React components, our createNavbar() function 
+               can be called on any page, eliminating the need to copy-paste the 
+               same HTML across multiple files. If we had 10 pages, we'd only 
+               maintain ONE navbar definition.
+            
+            2. SINGLE SOURCE OF TRUTH: When we need to update the navbar (add a 
+               link, change styling, etc.), we only modify the createNavbar() 
+               function once. In traditional HTML, we'd have to update every 
+               single page manually, risking inconsistencies.
+            
+            3. SEPARATION OF CONCERNS: The navbar logic is encapsulated in a 
+               function, separate from the page content. This is similar to how 
+               frameworks separate UI components from application logic.
+            
+            4. DYNAMIC RENDERING: We're using JavaScript to generate and inject 
+               HTML dynamically, which is the foundation of how frameworks render 
+               components to the DOM.
+            
+            FRAMEWORK COMPARISON:
+            - React: Uses JSX syntax and components like <Navbar />
+            - Vue: Uses template syntax and components with <navbar-component />
+            - Angular: Uses TypeScript components and selectors like <app-navbar>
+            
+            Our vanilla JS approach is a simplified version of what these frameworks
+            do under the hood - they all ultimately manipulate the DOM to inject
+            reusable component HTML, just with more sophisticated tooling, state
+            management, and optimization.
+            
+            LIMITATIONS OF THIS APPROACH:
+            While this mimics frameworks, it lacks:
+            - Automatic reactivity (updates when data changes)
+            - Virtual DOM for efficient updates
+            - State management systems
+            - Component lifecycle methods
+            - Advanced templating and data binding
+            
+            However, it demonstrates the fundamental principle that makes modern
+            web development more maintainable: write once, use everywhere!
+        */
+
+			/* 
+            STEP 4: BONUS - MAKE IT CONFIGURABLE (OPTIONAL)
+            
+            You can enhance the component by accepting parameters to customize it.
+            
+            Example with parameters:
+        */
+			function createConfigurableNavbar(brandName, links) {
+				return `
+                <nav>
+                    <a href="#" class="nav-brand">${brandName}</a>
+                    <ul class="nav-links">
+                        ${links
+							.map(
+								(link) => `
+                            <li><a href="${link.url}">${link.text}</a></li>
+                        `
+							)
+							.join("")}
+                    </ul>
+                </nav>
+            `;
+			}
+
+			/* 
+            Usage example:
+            
+            const myLinks = [
+                { text: 'Home', url: '#home' },
+                { text: 'Products', url: '#products' },
+                { text: 'Contact', url: '#contact' }
+            ];
+            
+            navbarContainer.innerHTML = createConfigurableNavbar('My Company', myLinks);
+        */
+
+			/* 
+            STEP 5: TESTING YOUR COMPONENT
+            
+            To verify your component works:
+            1. Open this HTML file in a browser
+            2. Verify the navbar appears at the top
+            3. Create 2-3 additional HTML pages (page2.html, page3.html)
+            4. Copy this same script into those pages
+            5. Verify the navbar appears identically on all pages
+            6. Modify the createNavbar() function and see all pages update
+            
+            This demonstrates the power of reusable components!
+        */
+		</script>
+	</body>
+</html>
