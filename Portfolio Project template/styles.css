@@ -1,0 +1,136 @@
+/*
+========================================
+STYLE.CSS — UI DESIGN FILE
+========================================
+
+GOAL:
+This file controls the VISUAL DESIGN (UI) of your portfolio.
+You should NOT write CSS in index.html.
+
+----------------------------------------
+UI DESIGN REQUIREMENTS
+----------------------------------------
+
+Your design must demonstrate:
+- A consistent color palette (2–4 colors)
+- Readable typography
+- Clear spacing and alignment
+- Visual hierarchy (headings stand out)
+- Responsive behavior
+
+DO NOT:
+- Use random colors
+- Use more than 2 fonts
+- Let text touch the edges of the screen
+*/
+
+/*
+----------------------------------------
+COLOR VARIABLES
+----------------------------------------
+Choose your colors ON PURPOSE.
+*/
+:root {
+	--primary-color: #1f2933;
+	--secondary-color: #3b82f6;
+	--background-color: #f9fafb;
+	--text-color: #111827;
+}
+
+/*
+----------------------------------------
+GLOBAL STYLES
+----------------------------------------
+These styles affect the entire page.
+*/
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: system-ui, sans-serif;
+	background-color: var(--background-color);
+	color: var(--text-color);
+	line-height: 1.6;
+}
+
+/*
+----------------------------------------
+LAYOUT SPACING
+----------------------------------------
+Use spacing to improve readability.
+*/
+section {
+	padding: 4rem 2rem;
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+/*
+----------------------------------------
+TYPOGRAPHY
+----------------------------------------
+Headings should clearly stand out.
+*/
+h1 {
+	font-size: 2.5rem;
+	margin-bottom: 1rem;
+}
+
+h2 {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
+
+/*
+----------------------------------------
+NAVIGATION
+----------------------------------------
+Navigation should be visible and usable.
+*/
+header {
+	background-color: var(--primary-color);
+	padding: 1rem 2rem;
+}
+
+nav a {
+	color: white;
+	margin-right: 1rem;
+	text-decoration: none;
+	font-weight: 500;
+}
+
+nav a:hover {
+	text-decoration: underline;
+}
+
+/*
+----------------------------------------
+PROJECT CARDS
+----------------------------------------
+Projects should be scannable.
+*/
+.project {
+	background: white;
+	padding: 1.5rem;
+	margin-bottom: 1.5rem;
+	border-radius: 6px;
+}
+
+/*
+----------------------------------------
+RESPONSIVE DESIGN
+----------------------------------------
+Your site must work on mobile.
+*/
+@media (max-width: 600px) {
+	h1 {
+		font-size: 2rem;
+	}
+
+	section {
+		padding: 2rem 1rem;
+	}
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+  ========================================
+  UI/UX PORTFOLIO WEBSITE — PROJECT FILE
+  ========================================
+
+  PROJECT GOAL:
+  You are creating a personal portfolio website that focuses on:
+  - UI (visual design)
+  - UX (usability and clarity)
+
+  This site should clearly answer:
+  - Who are you?
+  - What do you do?
+  - What have you made?
+  - How can someone contact you?
+
+  ----------------------------------------
+  REQUIRED FILE STRUCTURE
+  ----------------------------------------
+
+  Your project folder should look like this:
+
+  project-folder/
+  ├── index.html   (this file)
+  ├── style.css    (your styles go here)
+  └── script.js    (your JavaScript goes here)
+
+  You MUST create the CSS and JS files yourself.
+  Do NOT put all your CSS or JS in this file.
+  -->
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!--
+  ----------------------------------------
+  CONNECTING YOUR CSS FILE
+  ----------------------------------------
+
+  1. Create a file called: style.css
+  2. Make sure it is in the SAME folder as index.html
+  3. This <link> tag connects your CSS to your HTML
+  -->
+  <link rel="stylesheet" href="style.css" />
+
+  <title>My Portfolio</title>
+</head>
+<body>
+
+  <!--
+  ========================================
+  PAGE STRUCTURE REQUIREMENTS
+  ========================================
+
+  Your portfolio MUST include these sections:
+  - Header / Navigation
+  - Home (Landing)
+  - About
+  - Projects
+  - Contact
+
+  You may organize them as:
+  - One long scrolling page
+  - OR multiple pages (optional)
+
+  Focus on clarity and usability.
+  -->
+
+  <!-- HEADER / NAVIGATION -->
+  <header>
+    <!--
+    This should include:
+    - Your name or logo
+    - Navigation links to sections on the page
+    -->
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HOME / LANDING SECTION -->
+  <section id="home">
+    <!--
+    REQUIREMENTS:
+    - Clear headline (who you are + what you do)
+    - Short supporting description
+    -->
+    <h1>Your Name — What You Do</h1>
+    <p>A short sentence describing your focus or specialty.</p>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <!--
+    REQUIREMENTS:
+    - Short bio or professional summary
+    - Skills, tools, or areas of interest
+    -->
+    <h2>About Me</h2>
+    <p>Write a short paragraph about yourself.</p>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects">
+    <!--
+    REQUIREMENTS:
+    - At least 2–3 projects
+    - Each project should include:
+      - Title
+      - Short description
+      - Your role or contribution
+    -->
+    <h2>Projects</h2>
+
+    <div class="project">
+      <h3>Project Title</h3>
+      <p>Short description of the project.</p>
+    </div>
+
+    <div class="project">
+      <h3>Project Title</h3>
+      <p>Short description of the project.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact">
+    <!--
+    REQUIREMENTS:
+    - Email, form, or social links
+    - Must be easy to find
+    -->
+    <h2>Contact</h2>
+    <p>Email: yourname@example.com</p>
+  </section>
+
+  <!--
+  ========================================
+  ACCESSIBILITY REQUIREMENTS
+  ========================================
+
+  - Use proper heading order (h1 → h2 → h3)
+  - Text must be readable
+  - Colors must have enough contrast
+  - Images must include alt text
+  -->
+
+  <!--
+  ========================================
+  CONNECTING YOUR JAVASCRIPT FILE
+  ========================================
+
+  1. Create a file called: script.js
+  2. Place it in the SAME folder as index.html
+  3. This <script> tag connects your JS to your HTML
+  4. JavaScript is OPTIONAL but encouraged
+
+  Examples of allowed JS:
+  - Navigation interactions
+  - Button clicks
+  - Simple animations
+  - Theme toggles
+  -->
+
+  <script src="script.js"></script>
+</body>
+</html>
